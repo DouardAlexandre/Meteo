@@ -45,6 +45,7 @@ body{
   margin-top: 10rem;
 }
 p{
+  color: #ecf0f1;
   margin-top:2rem;
    font-size: 3rem;
 }
@@ -68,4 +69,13 @@ form{
   display: flex;
   flex-direction: column;
 
+}
+.wrap{
+  border-radius: 4rem;
+  margin-top:2rem;
+  position: absolute;
+  width:35%;
+  height: 90%;
+  background-color: white;
+  opacity:.1;
 }

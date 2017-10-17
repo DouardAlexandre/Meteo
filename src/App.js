@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import './fonts/font-awesome-4.7.0/css/font-awesome.min.css';
+/*import City, { Cities } from 'components/cities';*/
 
 class App extends Component {
   constructor(props){
@@ -33,16 +34,16 @@ class App extends Component {
 
     return (
       <div className="App">
-     
+       <div className="wrap">   </div>
         <div className="logo">
           <i className="fa fa-sun-o back" aria-hidden="true"></i>
         </div>
         <i className="fa fa-sun-o" aria-hidden="true"></i>
        <section className="section">
-       <form >
-          <input placeholder='  Ville'></input>
+       {/*<form >
+          <input ref="location" placeholder='  Ville'></input>
           <input id="submitBtn" type="submit" />
-       </form>
+       </form>*/}
              <p>
                 <img src={this.state.iconUrl}></img>
                 {this.state.data.name }
@@ -51,6 +52,7 @@ class App extends Component {
             <p>humidité: {this.state.data.main.humidity }%</p>
             <p>{this.state.data.main.temp }°C</p>
         </section>
+     
 
       </div>
     );
