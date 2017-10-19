@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import './fonts/font-awesome-4.7.0/css/font-awesome.min.css';
+import './font/font-awesome-4.7.0/css/font-awesome.min.css';
+import './css/weather-icons.css';
 
 class App extends Component {
   constructor(props){
     super(props);
+    //like setinitial state --> constructor
     this.state={
       town: 'rennes'
-
     }
-    this.handleChange = this.handleChange.bind(this);
   };
   
 
@@ -51,22 +51,18 @@ class App extends Component {
 
     });
   }
-  
-      // shouldComponentUpdate(nextState) {
-      //  const differentName = this.state.name !== nextState.name;
-      //   return differentName;
-      // }
       render() {
 
         if (!this.state.data) {
-          return <div>Loading</div>;
+          return <div className="loading">
+                   <div>Loading...</div>
+                 </div>;
         }
 
         return (
           <div className="App">
             <div className="wrap"></div>
             <div className="logo">
-
             <i className="fa fa-sun-o back" aria-hidden="true"></i>
 
             </div>
@@ -79,19 +75,17 @@ class App extends Component {
                 <input id="submitBtn" type="submit" value="Go" />
 
               </form>
-              <div class="townName">
+              <div className="townName">
                 {this.state.data.name }
-                <img src={this.state.iconUrl}></img>
+                <img src={this.state.iconUrl} alt="temps icon"></img>
               </div>
-              <div class="temperature">
-               {/* {this.state.data.weather[0].description} &nbsp;        */}
+               <p className="humidity">{this.state.data.main.humidity }% d'humidité.</p>
+              <div className="temperature">
                 {this.state.data.main.temp }°C
               </div>
-              <p className="humidity">{this.state.data.main.humidity }% d'humidité.</p>
-              <p className="windSpeed">vent à {this.state.data.wind.speed } m/s.</p>
+              <i className="wi wi-strong-wind"></i>
+              <p className="windSpeed">{this.state.data.wind.speed } m/s.</p>
             </section>
-
-
           </div>
           );
       }
