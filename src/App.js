@@ -32,7 +32,7 @@ class App extends Component {
 
     }))
     //clear input
-
+    this.refs.ville.value='';
   }
   
   componentDidMount() {
@@ -64,24 +64,32 @@ class App extends Component {
 
         return (
           <div className="App">
-          <div className="wrap">   </div>
-          <div className="logo">
-          <i className="fa fa-sun-o back" aria-hidden="true"></i>
-          </div>
-          <i className="fa fa-sun-o" aria-hidden="true"></i>
-          <section className="section">
-          <form ref='city' onSubmit={this.handleChange.bind(this)}>
-          <input ref='ville' placeholder='  Ville'></input>
-          <input id="submitBtn" type="submit" />
-          </form>
-          <p>
-          <img src={this.state.iconUrl}></img>
-          {this.state.data.name }
-          </p>
-          <p>{this.state.data.weather[0].description}</p>
-          <p>humidité: {this.state.data.main.humidity }%</p>
-          <p>{this.state.data.main.temp }°C</p>
-          </section>
+            <div className="wrap"></div>
+            <div className="logo">
+
+            <i className="fa fa-sun-o back" aria-hidden="true"></i>
+
+            </div>
+            <i className="fa fa-sun-o" aria-hidden="true"></i>
+            <section className="section">
+              <form ref='city' onSubmit={this.handleChange.bind(this)}>
+                <input ref='ville' placeholder='  Ville'>
+                </input>
+                 <div className="blue"></div>
+                <input id="submitBtn" type="submit" value="Go" />
+
+              </form>
+              <div class="townName">
+                {this.state.data.name }
+                <img src={this.state.iconUrl}></img>
+              </div>
+              <div class="temperature">
+               {/* {this.state.data.weather[0].description} &nbsp;        */}
+                {this.state.data.main.temp }°C
+              </div>
+              <p className="humidity">{this.state.data.main.humidity }% d'humidité.</p>
+              <p className="windSpeed">vent à {this.state.data.wind.speed } m/s.</p>
+            </section>
 
 
           </div>
