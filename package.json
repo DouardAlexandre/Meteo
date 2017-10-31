@@ -2,6 +2,7 @@
   "name": "meteo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/DouardAlexandre/meteo",
   "dependencies": {
     "json-loader": "^0.5.7",
     "react": "^16.0.0",
